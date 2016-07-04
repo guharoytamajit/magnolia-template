@@ -1,0 +1,41 @@
+form:
+  tabs:
+    - name: tabText
+      label: Texts
+      fields:
+        - name: title
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          label: Title
+        - name: introText
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          label: Introduction text
+        - name: moreText
+          class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
+          label: More Text
+          images: true
+          colors: 00923E,F8C100,28166F
+        - name: date
+          class: info.magnolia.ui.form.field.definition.DateFieldDefinition
+          time: true
+          label: Date
+    - name: tabText2
+      label: Texts2
+      fields:
+        - name: code
+          class: info.magnolia.ui.form.field.definition.CodeFieldDefinition
+          language: freemarker
+          label: Enter code
+        - name: image
+          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+          targetWorkspace: dam
+          appName: assets
+          label: Select image
+          identifierToPathConverter:
+            class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator
+          contentPreviewDefinition:
+            contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
+actions:
+  commit:
+    class: info.magnolia.ui.admincentral.dialog.action.SaveDialogActionDefinition
+  cancel:
+    class: info.magnolia.ui.admincentral.dialog.action.CancelDialogActionDefinition
